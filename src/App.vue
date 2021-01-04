@@ -7,7 +7,6 @@
 <script lang="tsx">
 import { defineComponent } from 'vue'
 import { EluiChinaAreaDht } from './EluiChinaAreaDht'
-
 export default defineComponent({
   name: 'app',
   components: {

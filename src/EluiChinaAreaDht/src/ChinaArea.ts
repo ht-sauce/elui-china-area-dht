@@ -1,5 +1,4 @@
 import chinaAreaData from 'china-area-data'
-import chinaAreaDataArr from 'china-area-data/data-array'
 
 // 递归子选项
 interface Options {
@@ -10,7 +9,7 @@ interface Options {
 }
 // 省市区数据结构化定义类型
 interface ChinaArr {
-  name: string
+  label: string
   parent?: string
   value: string
 }
@@ -26,22 +25,33 @@ interface ChinaAreaInput {
   customItem?: Options[]
   after?: boolean
 }
+interface ChinaAreaflat {
+  [key: string]: ChinaArr
+}
 class ChinaArea {
-  chinaAreaDataArr = chinaAreaDataArr
   chinaAreaData = chinaAreaData
+  chinaAreaflat: ChinaAreaflat // 对象改平之后的结构，用于数据取值
   // 将数组结构转化为对象结构
   chinaObj() {
-    const obj: { [key: string]: ChinaArr } = {}
-    chinaAreaDataArr.map((li: ChinaArr) => {
-      obj[li.value] = li
-    })
-    return obj
+    const list: ChinaAreaflat = {}
+    for (const key in chinaAreaData) {
+      for (const i in chinaAreaData[key]) {
+        const item: ChinaArr = {
+          label: chinaAreaData[key][i],
+          value: i,
+        }
+        if (key !== '86') item.parent = key
+        list[i] = item
+      }
+    }
+    return list
   }
   leave = 3 // 控制递归层级
   isall = false // 是否需要全部选项
   constructor({ leave = 0, isall = false }: ChinaAreaInput = {} as ChinaAreaInput) {
     this.leave = leave
     this.isall = isall
+    this.chinaAreaflat = this.chinaObj()
   }
   // 省市区数据格式化
   chinaData() {

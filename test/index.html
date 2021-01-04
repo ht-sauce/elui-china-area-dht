@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://unpkg.com/vue@next"></script>
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
+  <script src="https://unpkg.com/element-plus/lib/index.full.js"></script>
+  <script src="../lib/EluiChinaAreaDht.umd.js"></script>
+</head>
+<body>
+<div id="app">
+  <elui-china-area-dht @change="onChange"> </elui-china-area-dht>
+</div>
+</body>
+<script>
+  const app = Vue.createApp({
+    components: {
+      EluiChinaAreaDht: EluiChinaAreaDht.EluiChinaAreaDht
+    },
+    setup() {
+      function onChange(e) {
+        console.log(e)
+      }
+      return {
+        onChange,
+      }
+    },
+  });
+  console.log(EluiChinaAreaDht)
+  //app.use(EluiChinaAreaDht.EluiChinaAreaDht)
+  app.use(ElementPlus)
+  app.mount("#app");
+</script>
+</html>
