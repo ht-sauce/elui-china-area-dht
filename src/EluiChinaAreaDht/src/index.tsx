@@ -14,7 +14,7 @@ const EluiChinaAreaDht = defineComponent({
 
     const options = ref(chinaArea.chinaData())
 
-    return () => <el-cascader {...ctx.attrs} options={options.value} />
+    return () => <el-cascader {...ctx.attrs} options={options.value} v-slots={ctx.slots} />
   },
 })
 

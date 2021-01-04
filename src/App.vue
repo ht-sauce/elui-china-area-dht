@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <EluiChinaAreaDht @change="onChange" />
+    <elui-china-area-dht @change="onChange"> </elui-china-area-dht>
   </div>
 </template>
 
