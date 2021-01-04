@@ -1,24 +1,33 @@
 # dht-china-proper
 
-## Project setup
-```
-npm install
-```
+省市区数据来源：https://github.com/airyland/china-area-data  
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+##使用
+`
+<template>
+  <div class="app">
+    <EluiChinaAreaDht @change="onChange" />
+  </div>
+</template>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<script lang="tsx">
+import { defineComponent } from 'vue'
+import { EluiChinaAreaDht } from './EluiChinaAreaDht'
 
-### Lints and fixes files
-```
-npm run lint
-```
+export default defineComponent({
+  name: 'app',
+  components: {
+    EluiChinaAreaDht,
+  },
+  setup() {
+    function onChange(e: any) {
+      console.log(e)
+    }
+    return {
+      onChange,
+    }
+  },
+})
+</script>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`

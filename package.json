@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "china-area-data": "^5.0.1",
     "core-js": "^3.6.5",
     "element-plus": "^1.0.1-beta.19",
     "vue": "^3.0.5"
