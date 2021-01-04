@@ -3,8 +3,7 @@
 省市区数据来源：https://github.com/airyland/china-area-data  
 
 ##使用
-`
-<template>
+`<template>
   <div class="app">
     <EluiChinaAreaDht @change="onChange" />
   </div>
@@ -29,5 +28,4 @@ export default defineComponent({
   },
 })
 </script>
-
 `
