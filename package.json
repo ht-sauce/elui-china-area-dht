@@ -1,6 +1,6 @@
 {
   "name": "elui-china-area-dht",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "./lib/index.full.js.js",
   "types": "./lib/index.d.ts",
