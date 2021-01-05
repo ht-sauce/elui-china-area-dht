@@ -1,6 +1,9 @@
 <template>
   <div class="app">
-    <elui-china-area-dht @change="onChange"> </elui-china-area-dht>
+    <!--默认使用-->
+    <elui-china-area-dht @change="onChange"></elui-china-area-dht>
+    <!--带isall参数和leave参数示例-->
+    <elui-china-area-dht isall :leave="2" @change="onChange"></elui-china-area-dht>
   </div>
 </template>
 

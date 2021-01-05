@@ -1,12 +1,31 @@
 {
   "name": "elui-china-area-dht",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
+  "main": "./lib/index.full.js.js",
+  "types": "./lib/index.d.ts",
+  "author": "ht-sauce",
+  "license": "MIT",
+  "keywords": [
+    "EluiChinaAreaDht",
+    "elui-china-area-dht",
+    "elui-china",
+    "elui-china-area",
+    "dht"
+  ],
+  "description": "基于vue3和element-plus的省市区级联组件",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ht-sauce/elui-china-area-dht"
+  },
+  "homepage": "https://www.yuque.com/cv8igf/gaxplg/btzy5i",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name EluiChinaAreaDht --dest lib src/EluiChinaAreaDht/index.ts"
+    "clean:lib": "rimraf lib && rimraf es",
+    "lib": "vue-cli-service build --target lib --name index.full --dest lib src/EluiChinaAreaDht/index.ts",
+    "tsbulid": "tsc -d"
   },
   "dependencies": {
     "china-area-data": "^5.0.1",

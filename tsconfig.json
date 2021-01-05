@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./lib", // 编译后生成的文件目录
     "target": "esnext",
     "module": "esnext",
     "strict": true,
@@ -9,7 +10,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "baseUrl": ".",
     "types": [
       "webpack-env"
@@ -34,6 +35,8 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/main.ts",
+    "src/App.vue"
   ]
 }
