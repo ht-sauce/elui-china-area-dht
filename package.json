@@ -1,8 +1,8 @@
 {
   "name": "elui-china-area-dht",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "private": false,
-  "main": "./lib/index.full.js.js",
+  "main": "./lib/index.full.js",
   "types": "./lib/index.d.ts",
   "author": "ht-sauce",
   "license": "MIT",

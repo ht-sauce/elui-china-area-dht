@@ -1,4 +1,4 @@
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, getCurrentInstance } from 'vue'
 import ChinaArea from './ChinaArea'
 const EluiChinaAreaDht = defineComponent({
   name: 'EluiChinaAreaDht',
