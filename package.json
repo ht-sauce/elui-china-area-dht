@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": false,
   "main": "./lib/index.full.common.js",
-  "types": "./lib/index.d.ts",
+  "types": "./lib/EluiChinaAreaDht/index.d.ts",
   "author": "ht-sauce",
   "license": "MIT",
   "keywords": [
@@ -25,7 +25,7 @@
     "lint": "vue-cli-service lint",
     "clean:lib": "rimraf lib && rimraf es",
     "lib": "vue-cli-service build --target lib --name index.full --dest lib src/EluiChinaAreaDht/index.ts",
-    "tsbulid": "tsc src/EluiChinaAreaDht/index.ts"
+    "tsbulid": "tsc -d"
   },
   "dependencies": {
     "china-area-data": "^5.0.1",
