@@ -7,9 +7,9 @@
   </div>
 </template>
 
-<script lang="tsx">
+<script lang="ts">
 import { defineComponent } from 'vue'
-import { EluiChinaAreaDht } from './EluiChinaAreaDht'
+import { EluiChinaAreaDht } from './EluiChinaAreaDht/index'
 const chinaData = new EluiChinaAreaDht.ChinaArea().chinaAreaflat
 export default defineComponent({
   name: 'app',
@@ -17,7 +17,7 @@ export default defineComponent({
     EluiChinaAreaDht,
   },
   setup() {
-    function onChange(e: any) {
+    function onChange(e: number[]) {
       const one = chinaData[e[0]]
       const two = chinaData[e[1]]
       console.log(one, two)
