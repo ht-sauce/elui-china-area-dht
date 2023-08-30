@@ -11,35 +11,41 @@ https://github.com/ht-sauce/elui-china-area-dht/blob/master/src/EluiChinaAreaDht
 原理博客地址：https://juejin.cn/post/6914110923179474952/  
 elui-china-area-dht会导出ChinaArea()对象，用以进行数据格式转换。里面有所有的省市区地址数据 
 如：const chinaData = new EluiChinaAreaDht.ChinaArea().chinaAreaflat
-```$xslt
+
+突然有小伙伴问我怎么回显，这里更新下，正常使用v-model就行了
+```vue
 <template>
   <div class="app">
     <!--默认使用-->
-    <elui-china-area-dht @change="onChange"></elui-china-area-dht>
+    <elui-china-area-dht @change="onChange" v-model="showVal"></elui-china-area-dht>
     <!--带isall参数和leave参数示例-->
     <elui-china-area-dht isall :leave="2" @change="onChange"></elui-china-area-dht>
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import { EluiChinaAreaDht } from 'elui-china-area-dht'
-const chinaData = new EluiChinaAreaDht.ChinaArea().chinaAreaflat
-export default defineComponent({
+<script lang="ts">
+  import { defineComponent, ref } from 'vue'
+  import { EluiChinaAreaDht } from './EluiChinaAreaDht/index'
+  const chinaData = new EluiChinaAreaDht.ChinaArea().chinaAreaflat
+  export default defineComponent({
+    name: 'app',
     components: {
-        EluiChinaAreaDht,
+      EluiChinaAreaDht,
     },
     setup() {
-        function onChange(e) {
-          const one = chinaData[e[0]]
-          const two = chinaData[e[1]]
-          console.log(one, two)
-        }
-        return {
-            onChange,
-        }
+      const showVal = ref(['110000', '110100', '110101'])
+
+      function onChange(e: number[]) {
+        const one = chinaData[e[0]]
+        const two = chinaData[e[1]]
+        console.log(showVal.value, one, two)
+      }
+      return {
+        onChange,
+        showVal,
+      }
     },
-})
+  })
 </script>
 ```
 省市区数据来源：https://github.com/airyland/china-area-data  
